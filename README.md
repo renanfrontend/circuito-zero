@@ -1,5 +1,7 @@
 # Circuito Zero — o portfólio que se molda à vaga
 
+**No ar:** https://renanfrontend.github.io/circuito-zero/
+
 Quem recruta cola a descrição de uma vaga e a página se reorganiza para ela:
 
 - **Título reescrito** com as competências que a vaga pede e que eu comprovo.
@@ -42,4 +44,4 @@ node --test tests/engine.test.js
 
 ## Publicar
 
-É um site estático: GitHub Pages, Vercel ou Netlify servem a pasta como está. Depois de publicar, coloque o link no post do LinkedIn (`POST-LINKEDIN.md`).
+Publicado no GitHub Pages a partir da branch `main` (raiz). Cada push na `main` atualiza o site.

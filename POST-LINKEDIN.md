@@ -11,7 +11,7 @@ Cole a descrição de uma vaga no **Circuito Zero** e a página se reorganiza na
 
 Testei com uma vaga de front-end sênior em React: 9 dos 13 itens com prova, e GraphQL, Storybook, micro-frontends e inglês avançado como lacunas assumidas.
 
-👉 Teste com uma vaga real: **[adicione o link publicado]**
+👉 Teste com uma vaga real: https://renanfrontend.github.io/circuito-zero/
 
 Feito com HTML, CSS e JavaScript puro, com testes e sem IA na hora da análise: as regras estão no código, para qualquer um conferir.
 
