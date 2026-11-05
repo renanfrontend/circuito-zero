@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071a18">
+  <meta name="description" content="Um mini game para aprender lógica digital. Ligue as entradas certas e acenda a cidade.">
+  <title>Circuito Zero — acenda a cidade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Circuito Zero início">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>CIRCUITO<span class="brand-light">ZERO</span></span>
+      </a>
+      <div class="top-meta"><span class="live-dot"></span> LABORATÓRIO DE LÓGICA <span class="meta-divider">/</span> <span id="level-label">FASE 01 / 05</span></div>
+      <button class="sound-button" id="reset-button" type="button" title="Reiniciar fase">↻ <span>REINICIAR</span></button>
+    </header>
+
+    <main id="inicio">
+      <section class="intro-row">
+        <div>
+          <p class="eyebrow"><span>01</span> — UM JOGO DE CIRCUITOS</p>
+          <h1>Acenda a cidade.<br><em>Uma conexão de cada vez.</em></h1>
+          <p class="intro-copy">Combine sinais e portas lógicas para resolver pequenos desafios. Sem instalar nada — só pensar e jogar.</p>
+        </div>
+        <div class="score-card"><span class="score-label">SEU PLACAR</span><strong id="score">000</strong><span class="score-foot"><span id="solved-count">0</span> / 5 CIRCUITOS RESOLVIDOS</span></div>
+      </section>
+
+      <section class="game-layout" aria-label="Área do jogo">
+        <aside class="mission-panel">
+          <div class="panel-kicker"><span class="tiny-square"></span> MISSÃO ATUAL</div>
+          <div class="mission-number" id="mission-number">01</div>
+          <h2 id="mission-title">Energia de emergência</h2>
+          <p id="mission-description">A bateria e o painel solar precisam estar ativos ao mesmo tempo para alimentar o abrigo.</p>
+          <div class="rule-card"><span class="rule-icon">⌘</span><div><strong>Como jogar</strong><p>Escolha uma porta lógica e ajuste os interruptores. Faça a saída combinar com o objetivo.</p></div></div>
+          <div class="goal-row"><span>SAÍDA DESEJADA</span><span class="goal-pill" id="goal-value">● ACESA</span></div>
+          <div class="mission-nav" id="mission-nav" aria-label="Selecionar fase"></div>
+        </aside>
+
+        <div class="board-wrap">
+          <div class="board-head"><div><span class="board-title">PAINEL DE CONTROLE</span><span class="board-subtitle">Configure seu circuito</span></div><span class="board-coord">CZ-<span id="coord">01</span> / 05</span></div>
+          <div class="circuit-board" id="circuit-board">
+            <div class="board-grid" aria-hidden="true"></div>
+            <div class="source source-a"><span class="source-label" id="input-a-label">BATERIA</span><button class="toggle" data-input="a" aria-label="Alternar bateria" aria-pressed="false"><span></span></button><span class="source-state" id="input-a-state">DESLIGADA</span></div>
+            <div class="source source-b"><span class="source-label" id="input-b-label">SOLAR</span><button class="toggle" data-input="b" aria-label="Alternar painel solar" aria-pressed="false"><span></span></button><span class="source-state" id="input-b-state">DESLIGADA</span></div>
+            <svg class="wires" viewBox="0 0 700 420" preserveAspectRatio="none" aria-hidden="true">
+              <path class="wire wire-a" d="M105 126 H284 Q305 126 305 147 V197 H352"/><path class="wire wire-b" d="M105 294 H284 Q305 294 305 273 V223 H352"/><path class="wire wire-out" d="M447 210 H574"/>
+            </svg>
+            <div class="gate-area"><span class="node-label">PORTA LÓGICA</span><div class="gate-options" id="gate-options"></div></div>
+            <div class="output"><span class="output-label">CARGA</span><div class="bulb" id="bulb"><span>✦</span></div><span class="output-state" id="output-state">SEM ENERGIA</span></div>
+            <div class="signal-chip chip-a" id="chip-a">0</div><div class="signal-chip chip-b" id="chip-b">0</div><div class="signal-chip chip-out" id="chip-out">0</div>
+            <div class="board-footnote"><span class="pulse"></span> SISTEMA ONLINE <span class="foot-divider">·</span> SINAIS DIGITAIS 0 / 1</div>
+          </div>
+          <div class="control-row"><div class="gate-caption"><span class="caption-mark">↳</span><span>SELECIONE A PORTA<br><small>O que precisa acontecer com as entradas?</small></span></div><div class="answer-area"><p id="feedback" class="feedback" aria-live="polite">Altere os interruptores e escolha uma porta para testar.</p><button class="check-button" id="check-button" type="button">TESTAR CIRCUITO <span>↗</span></button></div></div>
+        </div>
+      </section>
+      <footer><span>FEITO PARA APRENDER BRINCANDO</span><span>CIRCUITO ZERO <b>●</b> V. 1.0</span></footer>
+    </main>
+  </div>
+  <dialog id="complete-dialog" class="result-dialog"><div class="dialog-glow"></div><button class="close-dialog" id="close-dialog" aria-label="Fechar">×</button><span class="dialog-kicker">CIDADE ENERGIZADA</span><div class="dialog-icon">✦</div><h2>Você conectou<br><em>todas as ideias.</em></h2><p>Mandou bem! Lógica é isso: testar possibilidades até encontrar a conexão certa.</p><div class="final-score"><span>PLACAR FINAL</span><strong id="final-score">000</strong></div><button id="share-button" class="share-button">COMPARTILHAR RESULTADO <span>↗</span></button><span id="share-status" class="share-status" aria-live="polite"></span><button id="play-again" class="play-again">JOGAR DE NOVO</button></dialog>
+  <script src="game.js"></script>
+</body>
+</html>
